@@ -1,0 +1,11 @@
+<label>Menu Name</label>
+<input type="text" class="form-control"(input)="onUpdeteMenuName($event)">
+<!-- <input type="text" class="form-control" [(ngModel)]="menuItemName">
+<p>{{menuItemName}}</p> -->
+<button class="btn btn-primary"
+[disabled]="!allowAddMenuItem"
+(click)="onCreateMenuItem()"
+>เพิ่มรายการเมนู</button>
+<p *ngIf="menuItemCreation; else noMenuItem">{{menuItemCreationStatus}}</p>
+<ng-template #noMenuItem><p>ไม่มีการเพิ่มรายการเมนู</p></ng-template>
+<app-food-menu-item *ngFor="let menu-item of menuList"></app-food-menu-item>
